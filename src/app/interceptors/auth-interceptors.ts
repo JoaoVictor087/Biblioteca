@@ -5,9 +5,12 @@ import { AuthService } from '../service/auth-service';
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const authService = inject(AuthService);
 
-  const publicRoutes = ['/login', '/register'];
+  const publicRoutes = ['/login', '/usuarios'];
 
-  const isPublicRoute = publicRoutes.some((route) => req.url.includes(route));
+  const url = new URL(req.url, window.location.origin);
+  const path = url.pathname;
+
+  const isPublicRoute = publicRoutes.some((route) => path.startsWith(route));
 
   const token = authService.token();
 
