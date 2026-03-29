@@ -33,15 +33,12 @@ export class AuthService {
     this.token.set(token);
   }
 
-  logoutToken() {
+  logout() {
     this.token.set(null);
+    this.idUsuario.set(null);
   }
 
   isAuthenticated() {
     return !!this.token();
-  }
-
-  getToken() {
-    return this.token;
   }
 }
