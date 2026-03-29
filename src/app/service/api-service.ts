@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Login } from '../models/request/login';
 import { RegisterResponse } from '../models/response/register-response';
 import { LoginResponse } from '../models/response/login-response';
+import { LivroModel } from '../models/response/livro-model';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -19,4 +20,7 @@ export class ApiService {
     return this.http.post<LoginResponse>(this.baseUrl + "/login", dto)
   }
 
+  getAllBooks(){
+    return this.http.get<LivroModel[]>(this.baseUrl+"/livros")
+  }
 }
