@@ -1,0 +1,20 @@
+<main class="flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center min-h-screen">
+    <app-logo class="mb-20"></app-logo>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-2">
+      <label for="email"></label>
+      <input formControlName="email" class="px-20 bg-surface rounded-2xl py-5 text-center" type="text" id="email" name="email"
+             placeholder="Digite seu email">
+
+      <label for="password"></label>
+      <input formControlName="password" class="px-20 bg-surface rounded-2xl py-5 text-center" type="password" id="password" name="password"
+             value="Enviar">
+      <button
+        class="px-20 bg-primary rounded-2xl py-5 text-center mt-2"
+        type="submit"
+      >Login
+      </button>
+    </form>
+    <a routerLink="/register" class="text-content mt-5">Não tem conta? Clique Aqui </a>
+  </div>
+</main>

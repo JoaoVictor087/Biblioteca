@@ -1,3 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
-
 @import 'tailwindcss';
+
+:root {
+  --bg-color: #0a1128;        /* Background */
+  --surface-color: #001f54;   /* Cards, Sidebars */
+  --primary-color: #034078;   /* Headers, Branding */
+  --accent-color: #1282a2;    /* Buttons, Interactive elements */
+  --text-primary: #fefcfb;    /* High-contrast text */
+  --text-secondary: rgba(254, 252, 251, 0.7); /* Muted text */
+}
+
+@theme {
+  --color-main-bg: var(--bg-color);
+  --color-surface: var(--surface-color);
+  --color-primary: var(--primary-color);
+  --color-accent: var(--accent-color);
+  --color-content: var(--text-primary);
+  --color-content-muted: var(--text-secondary);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
