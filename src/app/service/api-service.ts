@@ -6,6 +6,7 @@ import { Login } from '../models/request/login';
 import { RegisterResponse } from '../models/response/register-response';
 import { LoginResponse } from '../models/response/login-response';
 import { LivroModel } from '../models/response/livro-model';
+import { ReservaResponse } from '../models/response/reserva';
 import { Reserva } from '../models/request/reserva';
 
 @Injectable({ providedIn: 'root' })
@@ -27,5 +28,9 @@ export class ApiService {
 
   reserveBook(dto: Reserva){
     return this.http.post(this.baseUrl +  "/reservas", dto)
+  }
+
+  getReservedBooks(idUsuario: number):Observable<ReservaResponse[]>{
+    return this.http.get<ReservaResponse[]>(this.baseUrl + "/reservas" + "/usuario" + "/" + idUsuario);
   }
 }

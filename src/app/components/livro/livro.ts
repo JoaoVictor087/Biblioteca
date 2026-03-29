@@ -2,10 +2,9 @@ import { Component, inject } from '@angular/core';
 import { ApiService } from '../../service/api-service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NgOptimizedImage } from '@angular/common';
-import { Reserva } from '../../models/request/reserva';
 import { AuthService } from '../../service/auth-service';
-import { SIGNAL } from '@angular/core/primitives/signals';
-import { ThisReceiver } from '@angular/compiler';
+import { Reserva } from '../../models/request/reserva';
+
 
 @Component({
   selector: 'app-livro',
