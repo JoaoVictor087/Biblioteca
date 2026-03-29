@@ -18,4 +18,13 @@ export class Reservedsbooks {
     this.apiService.getReservedBooks(Number(this.authService.getIdUsuario()())),
     { initialValue: [] as ReservaResponse[] },
   );
+
+  devolverLivro(idReserva: number, reserva: ReservaResponse) {
+    return this.apiService
+      .devolverLivro(idReserva, reserva)
+      .subscribe({
+        next: () => alert('Livro devolvido!'),
+        error: (err) => console.error('Reserva falhou', err),
+      });
+  }
 }

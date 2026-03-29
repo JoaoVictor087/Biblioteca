@@ -33,4 +33,8 @@ export class ApiService {
   getReservedBooks(idUsuario: number):Observable<ReservaResponse[]>{
     return this.http.get<ReservaResponse[]>(this.baseUrl + "/reservas" + "/usuario" + "/" + idUsuario);
   }
+
+  devolverLivro(idReserva: number, reserve: ReservaResponse){
+    return this.http.put(this.baseUrl + "/reservas" + "/" + idReserva + "/devolver", reserve);
+  }
 }
