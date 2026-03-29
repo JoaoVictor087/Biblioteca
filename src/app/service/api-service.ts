@@ -6,6 +6,7 @@ import { Login } from '../models/request/login';
 import { RegisterResponse } from '../models/response/register-response';
 import { LoginResponse } from '../models/response/login-response';
 import { LivroModel } from '../models/response/livro-model';
+import { Reserva } from '../models/request/reserva';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -21,6 +22,10 @@ export class ApiService {
   }
 
   getAllBooks(){
-    return this.http.get<LivroModel[]>(this.baseUrl+"/livros")
+    return this.http.get<LivroModel[]>(this.baseUrl + "/livros")
+  }
+
+  reserveBook(dto: Reserva){
+    return this.http.post(this.baseUrl +  "/reservas", dto)
   }
 }

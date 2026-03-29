@@ -29,6 +29,7 @@ export class AuthLogin {
       .subscribe({
         next: (response) => {
           this.authService.loginToken(response.token);
+          this.authService.storeIdUsuario(response.idUsuario)
           console.log('Login Realizado com sucesso');
           this.router.navigate(['/home']);
         },

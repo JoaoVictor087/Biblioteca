@@ -26,7 +26,7 @@ export class AuthRegister {
         nome: this.registerForm.getRawValue().username,
         email: this.registerForm.getRawValue().email,
         senha: this.registerForm.getRawValue().password,
-        role: 'ADMIN',
+        role: 'USUARIO',
       })
       .subscribe({
         next: () => {
